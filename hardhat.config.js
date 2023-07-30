@@ -10,8 +10,9 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY],
     },
     goerli: {
-      url: 'https://ethereum-goerli.publicnode.com',
+      url: 'https://eth-goerli.g.alchemy.com/v2/D_PyGF3XnRQgl4o37wQT-9kb452mYBlB',
       accounts: [process.env.PRIVATE_KEY],
     },
   }
 };
+ 
