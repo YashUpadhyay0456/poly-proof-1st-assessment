@@ -1,16 +1,69 @@
-# ERC20 Goerli to Mumbai Bridge Using fxPortal
-This project demonstrates how to use the fxPortal contracts to transfer ERC20 tokens from Goerli to Mumbai.
+# Space ERC 721A NFT Collection bridge from Etherium Goerli to Polygon Mumbai network  
 
-### Steps for Bridging
+This repository contains a Solidity smart contract for Space NFTs (Non-Fungible Tokens). The contract is built using the ERC721 standard and extends the functionality with ERC721A, which supports batch minting.
+### Requirements 
 
-1. Run npm i to install dependencies
-2. Put your private key in the .env.examples file and rename to .env when finished
-3. Run npx hardhat run scipts/deploy.js --network goerli to deploy ERC20 contract
-4. Paste the newly deployed contract address in the tokenAddress variable for the other scripts
-5. Make sure to fill in your public key
-6. Run npx hardhat run scipts/mint.js --network goerli to mint tokens to your wallet
-7. Run npx hardhat run scipts/approveDeposit.js --network goerli to approve and deposit your tokens to polygon
-8. Wait 20-30ish minutes for tokens to show on polygon account
-9. Use polyscan.com to check your account for the tokens. Once they arrive, you can click on the transaction to get the contract address for polygon.
-10. Use this polygon contract address for your getBalance script's tokenAddress
-11. Run npx hardhat run scipts/getBalance.js --network mumbai to see the new polygon balance
+- Node.js (>= 12.0.0)
+- npm (>= 6.0.0)
+- Hardhat (>= 2.0.0)
+  
+## Contract Details
+
+- Contract Name: Space
+- Symbol: Spc
+- Base URL for NFTs: "https://gateway.pinata.cloud/ipfs/QmUHVj7XKfSsjBfzfcnxhfY2C8hv7pvABWxbZ3WwT3EG9N/"
+- Prompt: "robots reading Sanskrit scripts in outer space to restore Earth"
+
+## Smart Contract Details
+
+The smart contract has the following features:
+
+- Batch minting of NFTs: The contract allows the owner to mint a specified number of Space NFTs in a single transaction using the `mint` function.
+
+- Ownership: The contract inherits from the OpenZeppelin Ownable contract, allowing only the contract owner to mint NFTs.
+
+- Base URI: The `_baseURI` function is overridden to set the base URL for the generated NFTs.
+
+## Deployment
+
+To deploy the Space NFT contract, use the following script:
+
+```bash
+npx hardhat run scripts/deploySpace.js --network <NETWORK_NAME>
+```
+
+## Minting NFTs
+
+To mint Space NFTs using the deployed contract, use the following script:
+
+```bash
+npx hardhat run scripts/mintNFTs.js --network <NETWORK_NAME>
+```
+
+## Deposit NFTs to FxChain
+
+To transfer ERC721A tokens (Space NFTs) to the Ethereum FxChain network, use the following script:
+
+```bash
+npx hardhat run scripts/depositNFTsToFxChain.js --network <NETWORK_NAME>
+```
+
+Note: Replace `<NETWORK_NAME>` with the desired network (e.g., "goerli", "rinkeby", etc.).
+
+## Prerequisites
+
+1. Node.js and npm should be installed on your machine.
+2. Create a `.env` file and set the `PRIVATE_KEY` and other necessary environment variables.
+
+## Contract Addresses
+
+- Space NFT Contract Address: `0x8fCDEb66A95b0DC946d119488bCD4a14d0c5162f`
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Acknowledgments
+
+- This project uses the ERC721A extension from `erc721a/contracts/ERC721A.sol`.
+- The `@openzeppelin/contracts/access/Ownable.sol` contract is used for ownership control.
