@@ -3,9 +3,8 @@
 This repository contains a Solidity smart contract for Space NFTs (Non-Fungible Tokens). The contract is built using the ERC721 standard and extends the functionality with ERC721A, which supports batch minting.
 ### Requirements 
 
-- Node.js (>= 12.0.0)
-- npm (>= 6.0.0)
-- Hardhat (>= 2.0.0)
+- Node.js and npm should be installed on your machine.
+- Create a `.env` file and set the `PRIVATE_KEY` and other necessary environment variables.
   
 ## Contract Details
 
@@ -13,6 +12,7 @@ This repository contains a Solidity smart contract for Space NFTs (Non-Fungible 
 - Symbol: Spc
 - Base URL for NFTs: "https://gateway.pinata.cloud/ipfs/QmUHVj7XKfSsjBfzfcnxhfY2C8hv7pvABWxbZ3WwT3EG9N/"
 - Prompt: "robots reading Sanskrit scripts in outer space to restore Earth"
+  
 
 ## Smart Contract Details
 
@@ -50,14 +50,7 @@ npx hardhat run scripts/depositNFTsToFxChain.js --network <NETWORK_NAME>
 
 Note: Replace `<NETWORK_NAME>` with the desired network (e.g., "goerli", "rinkeby", etc.).
 
-## Prerequisites
 
-1. Node.js and npm should be installed on your machine.
-2. Create a `.env` file and set the `PRIVATE_KEY` and other necessary environment variables.
-
-## Contract Addresses
-
-- Space NFT Contract Address: `0x8fCDEb66A95b0DC946d119488bCD4a14d0c5162f`
 
 ## License
 
